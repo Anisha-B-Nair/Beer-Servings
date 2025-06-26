@@ -17,6 +17,7 @@ with open(model_path, "rb") as f:
     lr_model = pickle.load(f)
 
 
+
 # User Inputs
 country = st.selectbox("Select a country", ["Germany", "USA", "India", "Brazil", "Czech Republic", "Ireland", "Japan"])
 continent = st.selectbox("Select a continent", ["Europe", "North America", "Asia", "South America", "Africa", "Oceania"])
