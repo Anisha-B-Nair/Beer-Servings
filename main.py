@@ -7,13 +7,15 @@ import os
 st.title("🍺 Beer Servings Estimation App")
 
 # Load the model (must be in the same folder)
-if not os.path.exists("model.pkl"):
-    st.error("❌ 'model.pkl' not found. Please make sure it's in the same folder as this app.")
+model_path = os.path.join("model", "model.pkl")
+
+if not os.path.exists(model_path):
+    st.error("❌ 'model/model.pkl' not found. Please make sure it's in the 'model' folder.")
     st.stop()
 
-with open("model/model.pkl", "rb") as f:
-
+with open(model_path, "rb") as f:
     lr_model = pickle.load(f)
+
 
 # User Inputs
 country = st.selectbox("Select a country", ["Germany", "USA", "India", "Brazil", "Czech Republic", "Ireland", "Japan"])
